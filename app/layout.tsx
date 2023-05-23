@@ -18,12 +18,9 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <script defer src="https://sdk.zebline.io/js/v1/sgm-sdk.js"></script>
-      </head>
-      <body className={inter.className}>
-        <div>{children}</div>
-
         <Script
-          id="show-banner"
+          id='some-id'
+          strategy='afterInteractive'
           dangerouslySetInnerHTML={{
             __html: ` window.zebline.init({
             token: "bearer 4$U2VnbWVudCFuMA$TyBLdeYwC71684835503713",
@@ -32,6 +29,10 @@ export default function RootLayout({
           }); `
           }}
         />
+      </head>
+      <body className={inter.className}>
+        <div>{children}</div>
+
       </body>
     </html>
   )
